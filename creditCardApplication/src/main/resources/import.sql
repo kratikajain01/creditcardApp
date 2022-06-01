@@ -1,0 +1,3 @@
+INSERT INTO USER_ENTITY (Username,Password,Email,Phone,Name) values ('user1','$2a$10$Gt/GkfF2ZHSxd8SDPnxl0upuVXaMkIwd1brrZdLTswrW5sDqLSO6C','user1@gmail.com','123456','user1');
+INSERT INTO USER_ENTITY (Username,Password,Email,Phone,Name) values ('user2','$2a$10$sdQcyN/Jgu0O5ZYr4mM.J.GwuIi5TrHk9QJgUtRY4YCjPO44T2BMG','user2@gmail.com','123406','user2');
+INSERT INTO USER_ENTITY (Username,Password,Email,Phone,Name) values ('user3','$2a$10$VM19ONeqZfm4C0agUBcDeesBgN/dDN.jMhZQCQh2XlhJy5y6CiToq','user3@gmail.com','113406','user3');

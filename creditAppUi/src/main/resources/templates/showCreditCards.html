@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Home page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body >
+	<table border="1">
+		<tr>
+			<th>Credit Card Number</th>
+			<th>Expiry Date</th>
+			<th>AvailableLimit</th>
+		<tr>
+		<tr th:each="creditCard : ${listOfCreditCards}">
+			<td th:text="${creditCard.creditCardNumber}" />
+			<td th:text="${creditCard.expiryDate}" />
+			<td th:text="${creditCard.availableLimit}" />
+		</tr>
+	</table>
+</body>
+</html>

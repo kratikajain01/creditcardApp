@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Add User</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	
+
+		<form action="#" th:action="@{/adduser}" th:object="${creditCard}"
+			method="post">
+<table>
+			<tr>
+				<td><label for="creditCardNumber">Credit Card Number</label></td>
+				<td><input type="text" th:field="*{creditCardNumber}"
+					id="creditCardNumber" placeholder="credit Card Number"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><label for="expiryDate">Expiry Date (dd/mm/yyyy)</label></td>
+				<td><input type="text" th:field="*{expiryDate}" id="expiryDate"
+					placeholder="expiry Date"></td>
+				<td><span th:if="${#fields.hasErrors('expiryDate')}"
+					th:errors="*{expiryDate}"></span></td>
+			</tr>
+
+			<tr>
+				<td><label for="availableLimit">Available Limit</label></td>
+				<td><input type="text" th:field="*{availableLimit}"
+					id="availableLimit" placeholder="available Limit"></td>
+				<td><span th:if="${#fields.hasErrors('availableLimit')}"
+					th:errors="*{availableLimit}"></span></td>
+			</tr>
+
+			<input type="submit" class="btn btn-primary" value="Submit">
+			</table>
+		</form>
+
+	
+</body>
+</html>
+
