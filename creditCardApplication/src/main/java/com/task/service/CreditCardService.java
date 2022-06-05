@@ -19,7 +19,7 @@ import com.task.exception.ApplicationException;
 @Service
 public interface CreditCardService {
 
-	CreditCard saveCard(CreditCard creditCard) throws ApplicationException, Exception;
+	CreditCard saveCard(CreditCard creditCard, String authorization) throws ApplicationException, Exception;
 
 	List<CreditCard> fetchCCByUser(Long userId);
 

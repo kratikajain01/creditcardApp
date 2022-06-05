@@ -65,7 +65,7 @@ public class CreditCard {
 
 	@JsonBackReference
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "username")
+	@JoinColumn(name = "user_id")
 	private User user;
 
 }

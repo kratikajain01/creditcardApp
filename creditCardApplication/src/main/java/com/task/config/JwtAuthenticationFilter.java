@@ -16,11 +16,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
+
 /**
  * @author kratika.jain
  * 
- * This class validates the JWT token in each request
- * by fetching the token from request header
+ *         This class validates the JWT token in each request by fetching the
+ *         token from request header
  * 
  */
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
@@ -45,10 +46,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 		if (header != null && header.startsWith(TOKEN_PREFIX)) {
 			authToken = header.replace(TOKEN_PREFIX, "");
 			username = jwtTokenUtil.getUsernameFromToken(authToken);
-		}
-
-		else {
+		} else {
 			logger.warn("Couldn't find bearer string, header will be ignored");
+			chain.doFilter(req, res);
+			return;
 		}
 		if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 

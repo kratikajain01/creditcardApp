@@ -39,4 +39,10 @@ public class CreditCardLuhn10ValidatorTest{
 		assertFalse(validate.isValid("135895499391436", constraintValidatorContext));
 		assertFalse(validate.isValid("7992739811", constraintValidatorContext));		
 	}
+	
+	@Test
+	public void validateCreditCardNumber_NotANumberTest() throws Exception{
+		CreditCardLuhn10Validator validate = new CreditCardLuhn10Validator();
+		assertFalse(validate.isValid("qwertyuiop", constraintValidatorContext));		
+	}
 }

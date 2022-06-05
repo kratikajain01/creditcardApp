@@ -107,7 +107,7 @@ public class CreditCardControllerTest {
 	@Test
 	public void saveCreditCardDetails_success() throws Exception {
 		CreditCard creditCard= new CreditCard(1, "79927398713",null, 2000.00, "VISA", new User());
-		when(creditCardService.saveCard(any())).thenReturn(creditCard);
+		when(creditCardService.saveCard(any(),any())).thenReturn(creditCard);
 				 mockMvc.perform(MockMvcRequestBuilders.post("/creditcard/save")
 			                .contentType(MediaType.APPLICATION_JSON)
 			                .content(asJsonString(creditCard)))

@@ -37,13 +37,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		http.addFilterBefore(new CorsFilter(), ChannelProcessingFilter.class);
 		http.csrf().disable().authorizeRequests().antMatchers("/").permitAll()
 				.antMatchers("/authenticate", "/h2/**", "/h2/login.do**", "/console/**").permitAll().anyRequest()
 				.authenticated().and().exceptionHandling().and().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		http.headers().frameOptions().disable();
 		http.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
-		http.addFilterBefore(new CorsFilter(), ChannelProcessingFilter.class);
+		
 	}
 
 	public BCryptPasswordEncoder encoder() {
